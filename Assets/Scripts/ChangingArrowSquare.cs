@@ -4,6 +4,7 @@ using UnityEngine;
 public class ChangingArrowSquare : MonoBehaviour
 {
     [SerializeField] bool clockwise = true;
+    [SerializeField, Range(1, 4)] int steps = 1;
     Quaternion addRotation;
     private void OnTriggerEnter(Collider other)
     {
@@ -17,11 +18,11 @@ public class ChangingArrowSquare : MonoBehaviour
     {
         if (!clockwise)
         {
-            addRotation = Quaternion.Euler(0, -90, 0);
+            addRotation = Quaternion.Euler(0, -90 * steps, 0);
         }
         else
         {
-            addRotation = Quaternion.Euler(0, 90, 0);
+            addRotation = Quaternion.Euler(0, 90 * steps, 0);
         }
         StartCoroutine(RotateSquare());
     }
