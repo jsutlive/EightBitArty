@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArtyMover : MonoBehaviour
+public class ArtyMover : MonoBehaviour, IExplode, IPowerup
 {
     public Vector2 artyDirection;
     [SerializeField] private float artyWaitTime;
@@ -79,7 +79,7 @@ public class ArtyMover : MonoBehaviour
         }
     }
 
-    public void StopArtyMovement()
+    public void Explode()
     {
         artyDead = true;
         artyMesh.SetActive(false);
@@ -89,5 +89,10 @@ public class ArtyMover : MonoBehaviour
     public void ArtyWin()
     {
         artyDead = true;
+    }
+
+    public bool HasPowerup()
+    {
+        return HasFoundBattery;
     }
 }

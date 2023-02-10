@@ -8,9 +8,9 @@ public class ChangingArrowSquare : MonoBehaviour
     Quaternion addRotation;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.TryGetComponent(out ArtyMover mover))
         {
-            other.GetComponent<ArtyMover>().SetArtyDirection(transform);
+            mover.SetArtyDirection(transform);
         }
     }
 

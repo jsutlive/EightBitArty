@@ -5,12 +5,14 @@ using UnityEngine;
 public class ExplosionSquare : MonoBehaviour
 {
     [SerializeField] private AudioClip explosionClip;
+    public bool canTrigger = true;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.TryGetComponent(out IExplode explode) && canTrigger)
         {
-            other.GetComponent<ArtyMover>().StopArtyMovement();
+            foreach(BoxCollider collider in GetComponentsInChildren<BoxCollider>()) { collider.enabled = false; }
+            explode.Explode();
             SFXManager.RequestClip(explosionClip);
         }
     }
