@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5594527178111578261}
   - component: {fileID: 7658150826930275423}
   - component: {fileID: 9045095279756706121}
-  - component: {fileID: 8162717055735604620}
   - component: {fileID: 8162717055735604621}
+  - component: {fileID: 8071576788838013536}
   m_Layer: 0
   m_Name: changingArrow
   m_TagString: Untagged
@@ -98,19 +98,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.015, y: 0.2, z: 0.003}
   m_Center: {x: 0, y: 0.1, z: -0.0000000037252903}
---- !u!114 &8162717055735604620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8162717055735604618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c50456c756b9a4aaa6cd61650a06c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clockwise: 0
 --- !u!65 &8162717055735604621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,3 +111,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.049999997, y: 0.049999997, z: 0.01}
   m_Center: {x: 0, y: 0, z: -0.0000000037252903}
+--- !u!114 &8071576788838013536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162717055735604618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b95be7ef3755547ac6a20dd0d2443b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clockwise: 1
+  steps: 1

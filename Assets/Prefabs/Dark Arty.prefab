@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7519531052350963683}
   - component: {fileID: 6782821897754230372}
-  - component: {fileID: 4407163612687936448}
+  - component: {fileID: 276206341110357069}
   m_Layer: 2
   m_Name: DestructionBox
   m_TagString: Untagged
@@ -45,7 +45,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.34333888, y: 1, z: 1}
   m_Center: {x: 1.3, y: 0, z: 0}
---- !u!114 &4407163612687936448
+--- !u!114 &276206341110357069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4024073742757381939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2028ccbbdd48064fa288428afa84a67, type: 3}
+  m_Script: {fileID: 11500000, guid: b1712447ad2e40641bea59d5943614fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 6297394521741304061}
@@ -4874,9 +4874,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6297394521741304062}
   - component: {fileID: 6297394521741304063}
+  - component: {fileID: 788974775759778327}
+  - component: {fileID: 8891549432379427711}
+  - component: {fileID: 3507176261321834882}
   - component: {fileID: 6297394521741304033}
   - component: {fileID: 6297394521741304032}
-  - component: {fileID: 3507176261321834882}
   m_Layer: 2
   m_Name: Dark Arty
   m_TagString: Player
@@ -4913,12 +4915,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4e5d65b7992e04d9f1033a6e88f5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artyDirection: {x: 0, y: 0}
   artyWaitTime: 1
   artyMoveTime: 0.5
   artyMoveClip: {fileID: 8300000, guid: 3f0f647fd9d7ea04c9e7c0ea0ef46e70, type: 3}
+  artyAudio: {fileID: 0}
+--- !u!114 &788974775759778327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297394521741304061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f199b68b7633f1346b3034d09cd56c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artyRotateTime: 0.5
+--- !u!114 &8891549432379427711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297394521741304061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271417f9058ffd9488835ecfa58542d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   artyMesh: {fileID: 1969546781888691457}
   artyBoomParticles: {fileID: 6297394521578114507}
+--- !u!114 &3507176261321834882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297394521741304061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4a6d16aa6bb954f9cd495a6d5a039d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionClip: {fileID: 8300000, guid: a6604cfe557a6784f840d0e872cb3d1b, type: 3}
+  canTrigger: 1
 --- !u!54 &6297394521741304033
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4948,20 +4989,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3507176261321834882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6297394521741304061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4a6d16aa6bb954f9cd495a6d5a039d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionClip: {fileID: 8300000, guid: a6604cfe557a6784f840d0e872cb3d1b, type: 3}
-  canTrigger: 1
 --- !u!1001 &1699077023687770192
 PrefabInstance:
   m_ObjectHideFlags: 0

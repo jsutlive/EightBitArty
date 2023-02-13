@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6224226073717858019}
   - component: {fileID: 8179684723648211497}
   - component: {fileID: 7369444021058114072}
-  - component: {fileID: 7369444021058114079}
+  - component: {fileID: 16149657298065038}
   m_Layer: 0
   m_Name: StaticArrow
   m_TagString: Untagged
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.2, z: 0.01}
   m_Center: {x: -0.000000014901161, y: 0.1, z: -0.0000000018626451}
---- !u!114 &7369444021058114079
+--- !u!114 &16149657298065038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7675523114499967996}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aba782e8859a146b21a8a9c09a872b, type: 3}
+  m_Script: {fileID: 11500000, guid: 05b9df67e14797145ae5dfdaa278f713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   staticArrow: 1

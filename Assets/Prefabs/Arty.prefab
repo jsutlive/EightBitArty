@@ -4848,9 +4848,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2570047853464639626}
   - component: {fileID: 2570047853464639627}
-  - component: {fileID: 2570047853464639637}
+  - component: {fileID: -4512132118803093220}
+  - component: {fileID: 2401984459913654433}
+  - component: {fileID: 1914994556109476916}
+  - component: {fileID: 2858625786534748063}
   - component: {fileID: 2570047853464639636}
-  - component: {fileID: 2570047853464639638}
+  - component: {fileID: 2570047853464639637}
   - component: {fileID: 8613479191920650494}
   m_Layer: 0
   m_Name: Arty
@@ -4888,12 +4891,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4e5d65b7992e04d9f1033a6e88f5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artyDirection: {x: 0, y: 0}
   artyWaitTime: 1
   artyMoveTime: 0.5
   artyMoveClip: {fileID: 8300000, guid: 3f0f647fd9d7ea04c9e7c0ea0ef46e70, type: 3}
+  artyAudio: {fileID: 8613479191920650494}
+--- !u!114 &-4512132118803093220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570047853464639625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f199b68b7633f1346b3034d09cd56c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artyRotateTime: 0.5
+--- !u!114 &2401984459913654433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570047853464639625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c87429b19c9bd4182b714f81d94ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1914994556109476916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570047853464639625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e6309f7c8e8f0449e1c8dd2e523274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2858625786534748063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570047853464639625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 271417f9058ffd9488835ecfa58542d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   artyMesh: {fileID: 3417050374805499291}
   artyBoomParticles: {fileID: 2570047853343143359}
+--- !u!65 &2570047853464639636
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570047853464639625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2570047853464639637
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4910,33 +4975,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2570047853464639636
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570047853464639625}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2570047853464639638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570047853464639625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95047a9c4a7a8de468f1ba0b2487f7bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickClip: {fileID: 8300000, guid: 139b105941eb48e40a56b04e6ee30199, type: 3}
-  sfx: {fileID: 8613479191920650494}
 --- !u!82 &8613479191920650494
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4948,7 +4986,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3731000027257711653, guid: 13e4c877f527ee6428f82169486ece8e, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

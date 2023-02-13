@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMouseClick : MonoBehaviour
 {
-    [SerializeField] AudioClip clickClip;
     [SerializeField] AudioSource sfx;
     Transform currentTransform;
     private void Update()
@@ -39,7 +36,6 @@ public class PlayerMouseClick : MonoBehaviour
     private void ClickObject(ArrowSquare arrow, int multiplier)
     {
         arrow.Rotate(multiplier);
-        sfx.clip = clickClip;
         sfx.Play();
     }
 }
