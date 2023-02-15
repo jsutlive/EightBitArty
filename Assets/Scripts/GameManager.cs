@@ -8,18 +8,25 @@ using static UnityEngine.SceneManagement.LoadSceneMode;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] List<string> levels;
+    [SerializeField] public List<LevelSO> levels;
+    [SerializeField] SaveDataSerializer dataSaver;
     public static Action OnLoadLevel;
-    public static Action<int> OnLoadLevelAtIndex;
+    private static Action<int> OnLoadLevelAtIndex;
     public static Action OnReload;
+    private static Action<LevelSO> OnLoadLevelOfObject;
 
     private int currentLevelIndex = 0;
 
+    public void RecordScore(int score)
+    {
+        levels[currentLevelIndex].RecordScore(score);
+    }
 
     private void OnEnable()
     {
         OnLoadLevel += LoadLevel;
         OnLoadLevelAtIndex += LoadLevelIndex;
+        OnLoadLevelOfObject += LoadLevelObject;
         OnReload += ReloadLevel;
     }
 
@@ -27,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         OnLoadLevel -= LoadLevel;
         OnLoadLevelAtIndex -= LoadLevelIndex;
+        OnLoadLevelOfObject -= LoadLevelObject;
         OnReload -= ReloadLevel;
     }
 
@@ -35,9 +43,23 @@ public class GameManager : MonoBehaviour
         OnLoadLevel?.Invoke();
     }
 
-    public static void LoadLevelAtIndex(int index)
+    public static void LoadLevelOfObject(LevelSO level)
     {
-        OnLoadLevelAtIndex?.Invoke(0);
+        OnLoadLevelOfObject?.Invoke(level);
+    }
+
+    private void LoadLevelObject(LevelSO level)
+    {
+        if (GetSceneByName("MainMenuUI").isLoaded)
+        {
+            UnloadSceneAsync(GetSceneByName("MainMenuUI"));
+        }
+        LoadSceneAsync(level.SceneName, Additive);
+    }
+
+    public static void LoadLevelAtIndex(int index = 0)
+    {
+        OnLoadLevelAtIndex?.Invoke(index);
     }
 
     public static void ReloadCurrentLevel()
@@ -51,7 +73,12 @@ public class GameManager : MonoBehaviour
         {
             UnloadSceneAsync(GetSceneByName("MainMenuUI"));
         }
-        LoadSceneAsync(levels[idx], Additive);
+        if(idx == 0)
+        {
+            levels[idx].Unlock();
+        }
+        Debug.Log(levels[idx].SceneName);
+        LoadSceneAsync(levels[idx].SceneName, Additive);
     }
 
     private void LoadLevel()
@@ -72,8 +99,8 @@ public class GameManager : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        LoadSceneAsync(levels[currentLevelIndex], Additive);
-        UnloadSceneAsync(GetSceneByName(levels[currentLevelIndex]));
+        LoadSceneAsync(levels[currentLevelIndex].SceneName, Additive);
+        UnloadSceneAsync(GetSceneByName(levels[currentLevelIndex].SceneName));
     }
 
     IEnumerator LoadLevelOnTimer()
@@ -84,8 +111,10 @@ public class GameManager : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        LoadSceneAsync(levels[currentLevelIndex+1], Additive);
-        UnloadSceneAsync(GetSceneByName(levels[currentLevelIndex]));
+        //dataSaver.Save(levels[currentLevelIndex]);
+        levels[currentLevelIndex+1].Unlock();
+        LoadSceneAsync(levels[currentLevelIndex+1].SceneName, Additive);
+        UnloadSceneAsync(GetSceneByName(levels[currentLevelIndex].SceneName));
         currentLevelIndex++;
     }
 }

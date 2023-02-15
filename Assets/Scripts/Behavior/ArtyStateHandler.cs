@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class ArtyStateHandler : MonoBehaviour
 {
@@ -12,6 +11,7 @@ public class ArtyStateHandler : MonoBehaviour
     public void Lose()
     {
         GetComponent<IMoveWithCoroutines>().StopMovement();
+        GameManager.ReloadCurrentLevel();
     }
     
 }

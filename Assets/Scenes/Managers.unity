@@ -401,6 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1302671281}
   - component: {fileID: 1302671282}
+  - component: {fileID: 1302671283}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -437,8 +438,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - Level01
-  - Level02
-  - Level03
-  - Level04
-  - Level05
+  - {fileID: 11400000, guid: 1638d0ee96c5cca48addbf496c9abae8, type: 2}
+  - {fileID: 11400000, guid: d20fea871b0824b4a9f416497bd94479, type: 2}
+  - {fileID: 11400000, guid: 7c09108d76c79ac429bd2e46ec7848f3, type: 2}
+  - {fileID: 11400000, guid: 6133c41ed45ec92479c8a17f38affd05, type: 2}
+  - {fileID: 11400000, guid: e0652b8c6cb7e4849aac996dbbe96172, type: 2}
+  dataSaver: {fileID: 1302671283}
+--- !u!114 &1302671283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302671280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d63bc3aa7dc0664a909fd9790b7e915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

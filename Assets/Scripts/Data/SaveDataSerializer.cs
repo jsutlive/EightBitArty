@@ -1,35 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.IO;
 using UnityEngine;
 using System.Xml.Serialization;
 
 public class SaveDataSerializer : MonoBehaviour
 {
-    public List<LevelData> data;
-    private int currentIndexLocation;
+    XmlSerializer serializer;
+    string DATAPATH;
 
-    private void OnEnable()
+    private void Start()
     {
-        GameManager.OnLoadLevel += SaveAtCurrentIndex;
-        GameManager.OnLoadLevelAtIndex += ChangeToIndex;
+        DATAPATH = Application.persistentDataPath;
+    }
+    public void Save(LevelSO so)
+    {      
+        var stream = new FileStream(DATAPATH + "/" + so.name + ".level", FileMode.Create);
+        serializer.Serialize(stream, so.levelSaveData);
+        stream.Close();
     }
 
-    private void OnDisable()
+    public bool Load(LevelSO so)
     {
-        GameManager.OnLoadLevel -= SaveAtCurrentIndex;
-        GameManager.OnLoadLevelAtIndex -= ChangeToIndex;
+        if (File.Exists((DATAPATH + "/" + so.name + ".level")))
+        {
+            var stream = new FileStream(DATAPATH + "/" + so.name + ".level", FileMode.Open);
+            LevelData data = serializer.Deserialize(stream) as LevelData;
+            so.levelSaveData = data;
+            stream.Close();
+            return true;
+        }
+        return false;
     }
-
-    private void SaveAtCurrentIndex()
-    {
-        Save();
-        currentIndexLocation++;
-    }
-    private void ChangeToIndex(int idx) => currentIndexLocation = idx;
-
-
-    public void Save()
-    {
-
-    }
+   
 }
