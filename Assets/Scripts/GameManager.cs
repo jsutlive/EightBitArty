@@ -77,7 +77,6 @@ public class GameManager : MonoBehaviour
         {
             levels[idx].Unlock();
         }
-        Debug.Log(levels[idx].SceneName);
         LoadSceneAsync(levels[idx].SceneName, Additive);
     }
 
@@ -88,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     private void ReloadLevel()
     {
+        Debug.Log("HERE");
         StartCoroutine(ReloadLevelOnTimer());
     }
 

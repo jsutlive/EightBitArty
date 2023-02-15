@@ -12,5 +12,6 @@ public class ArtyDestroyer : MonoBehaviour, IExplode
         GetComponent<IMoveWithCoroutines>().StopMovement();
         artyMesh.SetActive(false);
         artyBoomParticles.SetActive(true);
+        GetComponent<ArtyStateHandler>().Lose();
     }  
 }

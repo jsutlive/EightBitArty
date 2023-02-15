@@ -1548,6 +1548,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2570047853343143354, guid: 037c11c4ed01c294985c68655e5df3cc, type: 3}
+      propertyPath: lengthInSec
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2570047853464639625, guid: 037c11c4ed01c294985c68655e5df3cc, type: 3}
       propertyPath: m_Name
       value: Arty
