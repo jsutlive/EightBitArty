@@ -6,4 +6,19 @@ A puzzle game involving a cute 8-bit robot named Arty
      width="750"
      style="float: left; margin-right: 10px;" />
 </p>
-Control the arrows in light blue to affect Arty's movement. Watch out for enemies and explosive tiles!
+
+## How to Play
+
+Collect the battery and reach the exit to complete the level
+
+## Tile Types
+
+### Static Tile
+
+This Tile doesn't move.
+
+## Items
+
+### Battery
+
+The battery allows Arty to exit the level. Don't forget to collect it before you leave the level!
